@@ -1311,8 +1311,6 @@ def builtin_resolver(app: Sphinx, env: BuildEnvironment,
 
     if node.get('refdomain') != 'py':
         return None
-    elif node.get('reftype') in ('class', 'obj') and node.get('reftarget') == 'None':
-        return contnode
     elif node.get('reftype') in ('class', 'exc'):
         reftarget = node.get('reftarget')
         if inspect.isclass(getattr(builtins, reftarget, None)):
